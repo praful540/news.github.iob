@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breaking News</title>
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; background:#f4f4f4; }
+    header { background:#c0392b; color:#fff; padding:20px 0; text-align:center; }
+    nav { background:#222; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; padding:10px; }
+    .nav-links { display:flex; flex-wrap:wrap; }
+    nav a { color:#fff; text-decoration:none; margin:0 12px; font-weight:bold; padding:8px 0; }
+    nav a.active, nav a:hover { color:#c0392b; background:#fff; border-radius:4px; }
+    .search-bar { display:flex; align-items:center; width:100%; max-width:320px; margin:10px auto 0 auto; }
+    .search-bar input[type="text"] {
+      width:100%; border:0; outline:none; padding:14px 20px; font-size:20px; border-radius:30px 0 0 30px;
+      background:#fff; color:#222;
+    }
+    .search-bar input[type="text"]::placeholder { color:#aaa; }
+    .search-bar button {
+      border:0; outline:none; background:#c0392b; border-radius:0 30px 30px 0; width:60px; height:60px;
+      cursor:pointer; display:flex; align-items:center; justify-content:center;
+    }
+    .search-bar img { width:25px; }
+    .container { max-width:900px; margin:30px auto; background:#fff; padding:20px; border-radius:8px; }
+    .breaking { background:#e74c3c; color:#fff; padding:10px; font-size:1.2em; border-radius:4px; margin-bottom:20px; }
+    .news-article { border-bottom:1px solid #ddd; padding:15px 0; }
+    .news-article:last-child { border-bottom:none; }
+    .news-title { font-size:1.3em; color:#c0392b; margin-bottom:5px; }
+    .news-meta { color:#888; font-size:0.9em; margin-bottom:10px; }
+    .news-content { color:#333; }
+    footer { background:#222; color:#fff; text-align:center; padding:15px 0; margin-top:40px; }
+    @media (max-width:700px) {
+      .container { padding:10px; }
+      nav { flex-direction:column; align-items:stretch; }
+      .nav-links { flex-direction:column; }
+      nav a { margin:4px 0; }
+      .search-bar { max-width:100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Breaking News</h1>
+    <p>Your source for the latest updates</p>
+    <div id="date" style="margin-top:10px; font-size:1em;"></div>
+  </header>
+  <nav>
+    <div class="nav-links">
+      <a class="active" href="index.html">Home</a>
+      <a href="world.html">World</a>
+      <a href="politics.html">Politics</a>
+      <a href="sports.html">Sports</a>
+      <a href="technology.html">Technology</a>
+    </div>
+    <form class="search-bar" action="#" method="get">
+      <input type="text" placeholder="Search news..." name="q">
+      <button type="submit"><img src="https://img.icons8.com/ios-filled/50/ffffff/search--v1.png" alt="Search"></button>
+    </form>
+  </nav>
+  <div class="container">
+    <div class="breaking">
+      🔴 <strong>Breaking:</strong> Major earthquake shakes downtown city, emergency services responding.
+    </div>
+    <div class="news-article">
+      <div class="news-title">Elections 2025: Early Results Show Tight Race</div>
+      <div class="news-meta">Published: May 7, 2025 | By: Jane Reporter</div>
+      <div class="news-content">
+        The first results from the national elections are coming in, showing a close contest between the leading parties. Stay tuned for live updates as more data becomes available.
+      </div>
+    </div>
+    <div class="news-article">
+      <div class="news-title">Tech Giants Announce New AI Collaboration</div>
+      <div class="news-meta">Published: May 7, 2025 | By: John Techie</div>
+      <div class="news-content">
+        In a surprise move, several major tech companies have announced a joint venture to advance artificial intelligence research, promising breakthroughs in automation and machine learning.
+      </div>
+    </div>
+    <div class="news-article">
+      <div class="news-title">Championship Finals: Local Team Claims Victory</div>
+      <div class="news-meta">Published: May 6, 2025 | By: Alex Sports</div>
+      <div class="news-content">
+        The local basketball team secured the championship title last night in a thrilling overtime finish, sparking celebrations across the city.
+      </div>
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 Breaking News | All Rights Reserved
+  </footer>
+  <script>
+    // Set current date
+    document.getElementById('date').textContent = new Date().toLocaleString('en-IN', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute:'2-digit'
+    });
+  </script>
+</body>
+</html>
